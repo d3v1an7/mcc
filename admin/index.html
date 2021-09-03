@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCC CMS</title>
+</head>
+<body>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    var PostPreview = createClass({
+      render: function() {
+        let body = this.props.widgetFor('body')
+        let content = body.props.value
+        // Hack together support for container/item shortcodes defined in .eleventy.js
+        let container_item_shortcodes_open = /{% (div|container|item) "(.*?)" %}/g
+        let container_item_shortcodes_close = /{% end(div|container|item) %}/g
+        content = content.replace(container_item_shortcodes_open, '<div class="$2">')
+        content = content.replace(container_item_shortcodes_close, '</div>')
+        body.props.value = content
+        let entry = this.props.entry
+        let title = entry.getIn(['data', 'title'])
+        let bg_colour = entry.getIn(['data', 'background_colour'])
+        return h('main', {'className': `wrapper ${bg_colour}`},
+          h('h4', {}, title),
+          h('div', {}, body)
+        )
+      }
+    })
+    CMS.registerPreviewTemplate("pages", PostPreview)
+    CMS.registerPreviewStyle("/style.css")
+  </script>
+</body>
+</html>

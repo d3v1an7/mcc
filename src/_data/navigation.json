@@ -1,0 +1,30 @@
+{
+  "featured": [
+    {
+      "name": "Join Meetup",
+      "url": "/meetup/"
+    }
+  ],
+  "general": [
+    {
+      "name": "Videos",
+      "url": "/videos/"
+    },
+    {
+      "name": "Books",
+      "url": "/books/"
+    },
+    {
+      "name": "Tech",
+      "url": "/tech/"
+    },
+    {
+      "name": "Docs",
+      "url": "/docs/"
+    },
+    {
+      "name": "More",
+      "url": "/more/"
+    }
+  ]
+}

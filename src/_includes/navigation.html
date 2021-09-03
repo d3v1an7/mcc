@@ -1,0 +1,52 @@
+<nav class="sticky {{ background_colour }} top-0" x-data="{ mobileMenuOpen: false }" @keydown.escape="mobileMenuOpen = false">
+  <div class="wrapper py-0">
+    <div class="relative flex items-center justify-between h-16 border-b border-off-dark border-opacity-50 py-2">
+      <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
+        <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-off-dark hover:text-off-light hover:bg-off-dark" aria-controls="mobile-menu" aria-expanded="false" x-bind:aria-expanded="mobileMenuOpen.toString()">
+          <span class="sr-only">Open main menu</span>
+          <svg x-state:on="Menu open" x-state:off="Menu closed" class="block h-6 w-6" :class="{ 'hidden': mobileMenuOpen, 'block': !(mobileMenuOpen) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg x-state:on="Menu open" x-state:off="Menu closed" class="hidden h-6 w-6" :class="{ 'block': mobileMenuOpen, 'hidden': !(mobileMenuOpen) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      <div class="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="/" class="contents">
+            <h1>Men Championing Change</h1>
+          </a>
+        </div>
+        <div class="hidden md:block md:ml-6">
+          <div class="flex space-x-4 h-full items-center">
+          {%- for item in navigation.general %}
+            {%- if item.url == page.url %}
+            <a href="{{ item.url }}" class="navigation-item" aria-current="page">{{ item.name }}</a>
+            {%- else %}
+            <a href="{{ item.url }}" class="navigation-item navigation-item-hover">{{ item.name }}</a>
+            {%- endif %}
+          {%- endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="absolute right-0 flex items-center md:static md:inset-auto md:ml-6">
+        {%- for item in navigation.featured %}
+          {%- if item.url == page.url %}
+          <a href="{{ item.url }}" class="navigation-item" aria-current="page">{{ item.name }}</a>
+          {%- else %}
+          <a href="{{ item.url }}" class="navigation-item navigation-item-hover">{{ item.name }}</a>
+          {%- endif %}
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="md:hidden" x-cloak x-show="mobileMenuOpen">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+    {%- for item in navigation.general %}
+      {%- if item.url == page.url %}
+      <a href="{{ item.url }}" class="block navigation-item" aria-current="page">{{ item.name }}</a>
+      {%- else %}
+      <a href="{{ item.url }}" class="block navigation-item navigation-item-hover">{{ item.name }}</a>
+      {%- endif %}
+    {%- endfor %}
+    </div>
+  </div>
+</nav>
+

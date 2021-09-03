@@ -1,0 +1,5 @@
+backend:
+  name: github
+  repo: d3v1an7/mcc
+  branch: main
+  base_url: https://bemm.com.au

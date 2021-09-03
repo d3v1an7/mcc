@@ -1,0 +1,10 @@
+{% extends './base.njk' %}
+{% block content %}
+<main class="flex-grow">
+  <div class="wrapper">
+    <div class="p-20 text-center">
+      {{ content | safe }}
+    </div>
+  </div>
+</main>
+{% endblock %}

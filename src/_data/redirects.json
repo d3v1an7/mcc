@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/admin",
+      "destination": "/admin/",
+      "code": "301"
+    }
+  ]
+}

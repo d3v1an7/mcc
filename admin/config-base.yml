@@ -1,0 +1,110 @@
+# publish_mode: editorial_workflow
+
+site_url: https://mcc.com.au
+media_folder: src/images
+collections:
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: src/pages
+    description: >
+      Home for all editable content. Making changes here will add/modify markdown files in the pages
+      directory.
+    create: true
+    summary: '{{fields.permalink}}'
+    sortable_fields:
+      - permalink
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Body
+        name: body
+        widget: markdown
+      - label: Permalink
+        name: permalink
+        widget: string
+        required: false
+      - label: Background colour
+        name: background_colour
+        widget: select
+        options:
+          - label: Gray
+            value: bg-gray-800
+        required: false
+  - label: Settings
+    name: settings
+    description: >
+      Home for all editable website settings, including navigation and
+      redirects. Making changes here will modify the related JSON file in the
+      _data directory.
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: Navigation
+        name: navigation
+        file: src/_data/navigation.json
+        widget: object
+        fields:
+          - label: General
+            name: general
+            label_singular: Item
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - label: Name
+                name: name
+                widget: string
+              - label: URL
+                name: url
+                widget: string
+          - label: Featured
+            name: featured
+            label_singular: Item
+            widget: list
+            max: 1
+            summary: '{{fields.name}}'
+            fields:
+              - label: Name
+                name: name
+                widget: string
+              - label: URL
+                name: url
+                widget: string
+      - label: Redirects
+        name: redirects
+        file: src/_data/redirects.json
+        fields:
+          - label: Redirects
+            label_singular: Item
+            name: redirects
+            widget: list
+            summary: '{{fields.source}} ⭢ {{fields.destination}}'
+            fields:
+              - label: Source
+                name: source
+                widget: string
+              - label: Destination
+                name: destination
+                widget: string
+              - label: Code
+                name: code
+                widget: select
+                options:
+                  - '301'
+                  - '302'
+      - label: SEO & social
+        name: seo
+        file: src/_data/seo.json
+        fields:
+          - label: Site name
+            name: title
+            widget: string
+          - label: Meta description
+            name: description
+            widget: string
+          - label: Social image
+            name: image
+            widget: image
+            required: false

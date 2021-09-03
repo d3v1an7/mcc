@@ -1,0 +1,8 @@
+# Logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# Build artefacts
+_site
