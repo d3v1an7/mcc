@@ -21,7 +21,7 @@
     @apply border-opacity-10 my-16;
   }
   .columns {
-    @apply space-y-6 md:flex md:space-x-12 md:space-y-0;
+    @apply space-y-6 lg:flex lg:space-x-12 lg:space-y-0;
   }
   .column {
     @apply flex-1;
@@ -55,7 +55,7 @@
   }
   /* Prose overrides */
   .prose-xl h2 {
-    @apply text-5xl sm:text-7xl mt-6 mb-8;
+    @apply text-5xl xl:text-7xl mt-6 mb-8;
   }
   .tech h3 {
     @apply mt-0;
