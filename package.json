@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "@tailwindcss/typography": "^0.4.1",
     "alpinejs": "^3.3.1",
     "eleventy-plugin-embed-everything": "^1.13.3",
     "eleventy-plugin-seo": "^0.5.2",
