@@ -6,3 +6,4 @@ node_modules/
 
 # Build artefacts
 _site
+admin/config.yml
