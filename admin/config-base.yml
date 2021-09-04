@@ -47,23 +47,10 @@ collections:
         file: src/_data/navigation.json
         widget: object
         fields:
-          - label: General
-            name: general
+          - label: Navigation
+            name: navigation
             label_singular: Item
             widget: list
-            summary: '{{fields.name}}'
-            fields:
-              - label: Name
-                name: name
-                widget: string
-              - label: URL
-                name: url
-                widget: string
-          - label: Featured
-            name: featured
-            label_singular: Item
-            widget: list
-            max: 1
             summary: '{{fields.name}}'
             fields:
               - label: Name
@@ -94,6 +81,104 @@ collections:
                 options:
                   - '301'
                   - '302'
+      - label: Books
+        name: books
+        file: src/_data/books.json
+        fields:
+          - label: Books
+            label_singular: Book
+            name: books
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - label: Book Image
+                name: image
+                widget: image
+              - label: Title
+                name: title
+                widget: string
+              - label: Author
+                name: author
+                widget: string
+              - label: Description
+                name: description
+                widget: markdown
+      - label: Videos
+        name: videos
+        file: src/_data/videos.json
+        fields:
+          - label: Videos
+            label_singular: Video
+            name: videos
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - label: YouTube URL
+                name: url
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: markdown
+      - label: Tech
+        name: tech
+        file: src/_data/tech.json
+        fields:
+          - label: Tech
+            label_singular: Item
+            name: tech
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - label: Logo
+                name: image
+                widget: image
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: markdown
+      - label: Docs
+        name: docs
+        file: src/_data/docs.json
+        fields:
+          - label: Docs
+            label_singular: Item
+            name: docs
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - label: Logo
+                name: image
+                widget: image
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: markdown
+      - label: More
+        name: more
+        file: src/_data/more.json
+        fields:
+          - label: More
+            label_singular: Item
+            name: more
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - label: Logo
+                name: image
+                widget: image
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: markdown
       - label: SEO & social
         name: seo
         file: src/_data/seo.json

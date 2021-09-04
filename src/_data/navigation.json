@@ -1,11 +1,5 @@
 {
-  "featured": [
-    {
-      "name": "Join Meetup",
-      "url": "/meetup/"
-    }
-  ],
-  "general": [
+  "navigation": [
     {
       "name": "Videos",
       "url": "/videos/"
