@@ -17,9 +17,6 @@
   .wrapper {
     @apply max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8;
   }
-  .divider {
-    @apply border-opacity-10 my-16;
-  }
   .columns {
     @apply space-y-6 lg:flex lg:space-x-12 lg:space-y-0;
   }
@@ -51,8 +48,23 @@
 
 @layer utilities {
   hr {
-    @apply border-off-light divider border-opacity-10;
+    @apply border-off-light border-opacity-10 my-16 border-opacity-10;
   }
+  .divider{
+    @apply font-montserrat uppercase text-sm;
+    @apply flex items-center my-4 h-4;
+  }
+  .divider:before, .divider:after{
+    content: '';
+    @apply flex-grow h-0.5 bg-opacity-50 bg-off-light;
+  }
+  .divider:not(:empty):before{
+    @apply mr-4;
+  }
+  .divider:not(:empty):after{
+    @apply ml-4;
+  }
+
   /* Prose overrides */
   .prose-xl h2 {
     @apply text-5xl xl:text-7xl mt-6 mb-8;

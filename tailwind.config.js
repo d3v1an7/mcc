@@ -3,6 +3,7 @@ module.exports = {
     enabled: true,
     content: [
       '.eleventy.js',
+      './admin/**/*.html',
       './src/style.css',
       './src/**/*.html',
       './src/**/*.json',

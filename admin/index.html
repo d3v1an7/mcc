@@ -10,8 +10,24 @@
   <script>
     var PostPreview = createClass({
       render: function() {
+        const slugify = str =>
+          str
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/[\s_-]+/g, '-')
+            .replace(/^-+|-+$/g, '');
         let body = this.props.widgetFor('body')
         let content = body.props.value
+        // Pretty loops
+        let item_loop_open = /{% for item in (.*?) %}/g
+        let item_loop_close = /{% endfor %}/g
+        let item_image = /<img src="(.*?)>/g
+        let item_detail = /{{ item.(.*?) }}/g
+        content = content.replace(item_loop_open, '<div class="divider text-opacity-40">Start loop for $1</div>')
+        content = content.replace(item_loop_close, '<div class="divider text-opacity-40">End loop</div>')
+        content = content.replace(item_image, '<div class="p-10 text-center rounded-lg border border-dashed border-white border-opacity-50">Image</div>')
+        content = content.replace(item_detail, '[$1]')
         // Hack together support for container/item shortcodes defined in .eleventy.js
         let container_item_shortcodes_open = /{% (div|container|item) "(.*?)" %}/g
         let container_item_shortcodes_close = /{% end(div|container|item) %}/g
@@ -20,8 +36,10 @@
         body.props.value = content
         let entry = this.props.entry
         let title = entry.getIn(['data', 'title'])
+        let title_safe = slugify(title)
         let bg_colour = entry.getIn(['data', 'background_colour'])
-        return h('main', {'className': `wrapper ${bg_colour}`},
+
+        return h('main', {'className': `wrapper prose-xl ${title_safe} ${bg_colour}`},
           h('h4', {}, title),
           h('div', {}, body)
         )
