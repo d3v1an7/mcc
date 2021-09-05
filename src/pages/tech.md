@@ -5,10 +5,7 @@ permalink: /tech/
 description: Levelling the playing field.
 background_colour: bg-gray-800
 ---
-
-#### Tech
-
-{% for item in tech.tech %}
+{% for item in data.tech %}
 
 {% container "columns" %}
 

@@ -1,5 +1,5 @@
 ---
-layout: index
+layout: page
 title: Men Championing Change
 permalink: /
 description: Levelling the playing field.

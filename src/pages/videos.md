@@ -5,10 +5,7 @@ permalink: /videos/
 description: Levelling the playing field.
 background_colour: bg-gray-800
 ---
-
-#### Videos
-
-{% for item in videos.videos %}
+{% for item in data.videos %}
 
 {% container "columns" %}
 

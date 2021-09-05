@@ -5,10 +5,7 @@ permalink: /docs/
 description: Levelling the playing field.
 background_colour: bg-gray-800
 ---
-
-#### Docs
-
-{% for item in docs.docs %}
+{% for item in data.docs %}
 
 {% container "columns" %}
 

@@ -5,10 +5,7 @@ permalink: /more/
 description: Levelling the playing field.
 background_colour: bg-gray-800
 ---
-
-#### More
-
-{% for item in more.more %}
+{% for item in data.more %}
 
 {% container "columns" %}
 

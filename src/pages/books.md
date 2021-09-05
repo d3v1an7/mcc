@@ -5,10 +5,9 @@ permalink: /books/
 description: Levelling the playing field.
 background_colour: bg-gray-800
 ---
+These are some books.
 
-#### Books
-
-{% for item in books.books %}
+{% for item in data.books %}
 
 {% container "columns" %}
 
@@ -22,7 +21,7 @@ background_colour: bg-gray-800
 
 ### {{ item.title }}
 
-<em>By {{item.author}}</em>
+*By {{ item.author }}*
 
 {{ item.description }}
 
