@@ -102,7 +102,7 @@ collections:
       Making changes here will modify the data.json file in the _data directory.
     delete: false
     editor:
-      preview: true
+      preview: false
     files:
       - label: Data
         name: data
