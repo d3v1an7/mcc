@@ -11,7 +11,11 @@ background_colour: bg-gray-800
 
 {% item "column max-w-xs" %}
 
-<div class="bg-white p-10"><img src="{{ item.image }}"></div>
+<div class="bg-white p-10">
+
+{% image item.image "Logo" %}
+
+</div>
 
 {% enditem %}
 

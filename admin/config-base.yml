@@ -1,7 +1,9 @@
 # publish_mode: editorial_workflow
 
 site_url: https://mcc.com.au
-media_folder: src/images
+media_folder: /src/images
+public_folder: ./src/images
+
 collections:
   - name: pages
     label: Pages
@@ -117,6 +119,8 @@ collections:
               - label: Book Image
                 name: image
                 widget: image
+                allow_multiple: false
+                choose_url: false
               - label: Title
                 name: title
                 widget: string

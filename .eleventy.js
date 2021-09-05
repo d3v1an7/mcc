@@ -7,6 +7,21 @@ const pluginEmbedEverything = require("eleventy-plugin-embed-everything")
 const pluginTailwindCSS = require("eleventy-plugin-tailwindcss")
 const yamlMerge = require('@alexlafroscia/yaml-merge')
 const markdownIt = require('markdown-it')
+const Image = require("@11ty/eleventy-img");
+
+async function imageShortcode(src, alt) {
+  let metadata = await Image(src, {
+    widths: [600],
+    urlPath: '/images/web/',
+    outputDir: './_site/images/web/'
+  });
+  let imageAttributes = {
+    alt,
+    loading: "lazy",
+    decoding: "async",
+  };
+  return Image.generateHTML(metadata, imageAttributes);
+}
 
 module.exports = (eleventyConfig) => {
   // Markdown config
@@ -61,6 +76,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addShortcode('buildTime', () => {
     return buildTime
   })
+  eleventyConfig.addShortcode('image', imageShortcode)
 
   // Browsersync options
   eleventyConfig.setBrowserSyncConfig({

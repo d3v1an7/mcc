@@ -11,7 +11,7 @@ background_colour: bg-gray-800
 
 {% item "column max-w-xs" %}
 
-<img src="{{ item.image }}">
+{% image item.image "Doc image" %}
 
 {% enditem %}
 
