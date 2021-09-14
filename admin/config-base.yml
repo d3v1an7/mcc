@@ -13,7 +13,7 @@ collections:
       Home for all editable content. Making changes here will add/modify
       markdown files in the pages directory.
     create: true
-    summary: '{{fields.permalink}}'
+    summary: '{{fields.title}}'
     sortable_fields:
       - permalink
     fields:
@@ -100,8 +100,8 @@ collections:
   - label: Data
     name: data
     description: >
-      Home for all repeatable content, including books and docs.
-      Making changes here will modify the data.json file in the _data directory.
+      Home for all repeatable content, including books and docs. Making changes
+      here will modify the data.json file in the _data directory.
     delete: false
     editor:
       preview: false
@@ -154,6 +154,8 @@ collections:
               - label: Logo
                 name: image
                 widget: image
+                allow_multiple: false
+                choose_url: false
               - label: Title
                 name: title
                 widget: string
@@ -169,6 +171,8 @@ collections:
               - label: Logo
                 name: image
                 widget: image
+                allow_multiple: false
+                choose_url: false
               - label: Title
                 name: title
                 widget: string
@@ -184,6 +188,8 @@ collections:
               - label: Logo
                 name: image
                 widget: image
+                allow_multiple: false
+                choose_url: false
               - label: Title
                 name: title
                 widget: string
