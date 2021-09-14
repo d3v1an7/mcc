@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Men Championing Change
+title: Contact
 permalink: /contact/
 description: Levelling the playing field.
 background_colour: bg-gray-800
