@@ -19,6 +19,10 @@
     {
       "name": "More",
       "url": "/more/"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact/"
     }
   ]
 }

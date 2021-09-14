@@ -44,6 +44,11 @@
   main a {
     @apply underline;
   }
+
+  /* Contact */
+  .form-field {
+    @apply appearance-none block w-full bg-transparent text-off-light border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-400;
+  }
 }
 
 @layer utilities {
