@@ -18,9 +18,9 @@
           <div class="flex space-x-4 h-full items-center">
           {%- for item in navigation.navigation %}
             {%- if item.url == page.url %}
-            <a href="{{ item.url }}" class="navigation-item" aria-current="page">{{ item.name }}</a>
+            <a href="{{ item.url }}" class="navigation-item bg-gray-900" aria-current="page">{{ item.name }}</a>
             {%- else %}
-            <a href="{{ item.url }}" class="navigation-item navigation-item-hover">{{ item.name }}</a>
+            <a href="{{ item.url }}" class="navigation-item">{{ item.name }}</a>
             {%- endif %}
           {%- endfor %}
           </div>
@@ -37,9 +37,9 @@
     <div class="px-2 pt-2 pb-3 space-y-1">
     {%- for item in navigation.navigation %}
       {%- if item.url == page.url %}
-      <a href="{{ item.url }}" class="block navigation-item" aria-current="page">{{ item.name }}</a>
+      <a href="{{ item.url }}" class="block navigation-item bg-gray-900" aria-current="page">{{ item.name }}</a>
       {%- else %}
-      <a href="{{ item.url }}" class="block navigation-item navigation-item-hover">{{ item.name }}</a>
+      <a href="{{ item.url }}" class="block navigation-item">{{ item.name }}</a>
       {%- endif %}
     {%- endfor %}
     </div>

@@ -29,10 +29,7 @@
     @apply font-montserrat uppercase;
   }
   .navigation-item {
-    @apply p-3 text-base font-medium transition;
-  }
-  .navigation-item-hover {
-    @apply hover:text-white;
+    @apply px-3 py-2 rounded-md text-base font-medium transition hover:bg-off-dark hover:text-white;
   }
 
   /* Footer */
@@ -42,7 +39,7 @@
 
   /* Main */
   main a {
-    @apply underline;
+    @apply underline hover:text-gray-300;
   }
 
   /* Contact */
